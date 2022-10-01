@@ -24,6 +24,13 @@ import 'dart:math';
 String checkEvenOdd(int i) => (i % 2 == 0) ? 'Even' : 'Odd';
 
 OptionalNamedParam({int z = 0, int x = 0}) => print('Numbers are $z and $x');
+int findFactorialRecursively(int rf) {
+  if (rf == 1) {
+    return 1;
+  } else {
+    return rf * findFactorialRecursively(rf - 1);
+  }
+}
 
 void main() {
   print('Please Enter A no to check Even/Odd');
@@ -166,8 +173,16 @@ void checkPrime(int num) {
 
 //12.Write a Dart function to Find Factorial of a Number Using Recursion.
 
+  print('Enter No to Find Factorial of a Number Using Recursion ');
+  int? recursiveFactorial = int.parse(stdin.readLineSync().toString());
+
+  findFactorialRecursively(recursiveFactorial);
 //13.Write a Dart function to reverse a Sentence words Using Recursion.
+
 //14.How to find the largest and the smallest element in list?
+  List<int> nos = [1, 4, 5, 3, 2, 55];
+  print('The Largest in the list is ' + nos.reduce(max).toString());
+  print('The Smallest in the list is ' + nos.reduce(min).toString());
 
 //15.Write a code to Multiply Two Matrix Using Multi-dimensional Lists.
 }
